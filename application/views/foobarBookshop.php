@@ -8,7 +8,7 @@ $assets = $this->config->item('assets');
 <!-- Log In Form -->
 <div class="row">
   <div class="large-6 large-centered columns">
-    <form>
+    <form method="post">
       <fieldset>
         <legend>Log In</legend>
         <div class="row">
@@ -51,7 +51,7 @@ $assets = $this->config->item('assets');
 
 <!-- Sign Up Form -->
 <div id="signUp" class="reveal-modal" data-reveal>
-  <form>
+  <form method="post">
     <div class="row">
       <div class="large-6 columns">
         <fieldset>
