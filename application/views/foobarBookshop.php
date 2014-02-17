@@ -8,7 +8,7 @@ $assets = $this->config->item('assets');
 <!-- Log In Form -->
 <div class="row">
   <div class="large-6 large-centered columns">
-    <form method="post">
+    <form method="post" action="index.php/login">
       <fieldset>
         <legend>Log In</legend>
         <div class="row">
