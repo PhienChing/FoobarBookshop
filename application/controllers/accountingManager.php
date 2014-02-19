@@ -2,6 +2,12 @@
 
 class AccountingManager extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Db_viewer');
+	}
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -19,10 +25,19 @@ class AccountingManager extends CI_Controller {
 	 */
 	public function index()
 	{
+		$data['transactions'] = $this->getTransactions();
+	
 		$this->load->view('shared/header');
 		$this->load->view('accountingManager/accountingManager_nav');
-		$this->load->view('accountingManager/accountingManager_view');
+		$this->load->view('accountingManager/accountingManager_view', $data);
 		$this->load->view('shared/footer');
+	}
+	
+	function getTransactions()
+	{
+		$data = $this->Db_viewer->getTransactions();
+		
+		return $data;
 	}
 	
 }
