@@ -17,89 +17,17 @@ $assets = $this->config->item('assets');
 </div>
 
 <div class="row">
+	<?php foreach ($products as $item): ?>
 	<div class="large-3 columns">
 	 	<ul class="pricing-table">
-  			<li class="title">Book Title</li>
-  			<li class="price">$99.99</li>
-  			<li class="description">Description</li>
-  			<li class="bullet-item">Type</li>
-  			<li class="cta-button"><a class="button" href="#"><i class="fa fa-shopping-cart"></i> Buy Now</a></li>
+  			<li class="title"><?php echo $item['title'] ?></li>
+  			<li class="price">PHP <?php echo number_format($item['price'], 2, '.', '') ?></li>
+  			<li class="description"><?php echo $item['synopsis'] ?></li>
+  			<li class="bullet-item"><?php echo $item['productType'] ?></li>
 		</ul>
 	</div>
-
-	<div class="large-3 columns">
-	 	<ul class="pricing-table">
-  			<li class="title">Magazine Title</li>
-  			<li class="price">$99.99</li>
-  			<li class="description">Description</li>
-  			<li class="bullet-item">Type</li>
-  			<li class="cta-button"><a class="button" href="#"><i class="fa fa-shopping-cart"></i> Buy Now</a></li>
-		</ul>
-	</div>
-
-	<div class="large-3 columns">
-	 	<ul class="pricing-table">
-  			<li class="title">Audio CD Title</li>
-  			<li class="price">$99.99</li>
-  			<li class="description">Description</li>
-  			<li class="bullet-item">Type</li>
-  			<li class="cta-button"><a class="button" href="#"><i class="fa fa-shopping-cart"></i> Buy Now</a></li>
-		</ul>
-	</div>
-
-	<div class="large-3 columns">
-	 	<ul class="pricing-table">
-  			<li class="title">DVD Title</li>
-  			<li class="price">$99.99</li>
-  			<li class="description">Description</li>
-  			<li class="bullet-item">Type</li>
-  			<li class="cta-button"><a class="button" href="#"><i class="fa fa-shopping-cart"></i> Buy Now</a></li>
-		</ul>
-	</div>
+	<?php endforeach ?>
 </div>
-
-<div class="row">
-	<div class="large-3 columns">
-	 	<ul class="pricing-table">
-  			<li class="title">Book Title</li>
-  			<li class="price">$99.99</li>
-  			<li class="description">Description</li>
-  			<li class="bullet-item">Type</li>
-  			<li class="cta-button"><a class="button" href="#"><i class="fa fa-shopping-cart"></i> Buy Now</a></li>
-		</ul>
-	</div>
-
-	<div class="large-3 columns">
-	 	<ul class="pricing-table">
-  			<li class="title">Magazine Title</li>
-  			<li class="price">$99.99</li>
-  			<li class="description">Description</li>
-  			<li class="bullet-item">Type</li>
-  			<li class="cta-button"><a class="button" href="#"><i class="fa fa-shopping-cart"></i> Buy Now</a></li>
-		</ul>
-	</div>
-
-	<div class="large-3 columns">
-	 	<ul class="pricing-table">
-  			<li class="title">Audio CD Title</li>
-  			<li class="price">$99.99</li>
-  			<li class="description">Description</li>
-  			<li class="bullet-item">Type</li>
-  			<li class="cta-button"><a class="button" href="#"><i class="fa fa-shopping-cart"></i> Buy Now</a></li>
-		</ul>
-	</div>
-
-	<div class="large-3 columns">
-	 	<ul class="pricing-table">
-  			<li class="title">DVD Title</li>
-  			<li class="price">$99.99</li>
-  			<li class="description">Description</li>
-  			<li class="bullet-item">Type</li>
-  			<li class="cta-button"><a class="button" href="#"><i class="fa fa-shopping-cart"></i> Buy Now</a></li>
-		</ul>
-	</div>
-</div>
-
 
 <!-- Edit Profile -->
 <div id="editProfile" class="reveal-modal" data-reveal>
