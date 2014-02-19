@@ -17,6 +17,7 @@ $assets = $this->config->item('assets');
 	</div>
 </div>
 
+	<!-- Table Rows -->
 <div class="row">
   <div class="large-12 columns">
 
@@ -31,30 +32,20 @@ $assets = $this->config->item('assets');
                 </tr>
               </thead>
               <tbody>
+				<?php foreach ($transactions as $trans_item): ?>
                 <tr>
-                  <td>999</td>
-                  <td>ABC DEF</td>
-                  <td>A Book</td>
-                  <td>1/7/2013</td>
-                  <td>12:00 AM</td>
-                <tr>
-                  <td>999</td>
-                  <td>ABC DEF</td>
-                  <td>A Book</td>
-                  <td>1/7/2013</td>
-                  <td>12:00 AM</td>
+                  <td><?php echo $trans_item['customerID'] ?></td>
+                  <td><?php echo $trans_item['title'] ?></td>
+                  <td><?php echo $trans_item['type'] ?></td>
+                  <td><?php echo $trans_item['dateTime'] ?></td>
+                  <td><?php echo $trans_item['dateTime'] ?></td>
                 </tr>
-                <tr>
-                  <td>999</td>
-                  <td>ABC DEF</td>
-                  <td>A Book</td>
-                  <td>1/7/2013</td>
-                  <td>12:00 AM</td>
-                </tr>
+				<?php endforeach ?>
               </tbody>
             </table>
+	</div>
 </div>
-</div>
+
 <!-- Edit Profile -->
 <div id="editProfile" class="reveal-modal" data-reveal>
   <form>
