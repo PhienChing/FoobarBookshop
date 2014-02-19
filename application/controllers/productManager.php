@@ -2,6 +2,12 @@
 
 class ProductManager extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Db_viewer');
+	}
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -19,12 +25,21 @@ class ProductManager extends CI_Controller {
 	 */
 	public function index()
 	{
+		$data['products'] = $this->getProducts();
+	
 		$this->load->view('shared/header');
 		$this->load->view('productManager/productManager_nav');
-		$this->load->view('productManager/productManager_view');
+		$this->load->view('productManager/productManager_view', $data);
 		$this->load->view('shared/footer');
 	}
-	
+
+	function getProducts()
+	{
+		//get query from database
+		$data = $this->Db_viewer->getProducts();
+		
+		return $data;
+	}
 }
 
 /* End of file welcome.php */
