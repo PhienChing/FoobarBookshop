@@ -6,9 +6,11 @@
 
 class Db_viewer extends CI_Model {
 
+	public function __construct() {
+		$this->load->database();
+	}
+
 	function viewUser($username) {
-		//$this->load->database('group_name');
-		
 		/* for testing */
 		$this->db->where('username', $username);
 		$query = $this->db->get('person');
@@ -32,5 +34,20 @@ class Db_viewer extends CI_Model {
 		$row = $query->first_row();
 		
 		return $row->position;
+	}
+	
+	function getProducts() {
+		$query = $this->db->get('product');
+		
+		return $query->result_array();
+	}
+	
+	function getTransactions() {
+		$query = $this->db->query('SELECT t.customerID, p.title AS title, p.productType AS type, t.dateTime
+							FROM transaction t
+							INNER JOIN product p
+							ON t.productID=p.productID');
+		
+		return $query->result_array();
 	}
 }
