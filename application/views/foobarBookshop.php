@@ -58,7 +58,7 @@ $assets = $this->config->item('assets');
           <legend>User Credentials</legend>
           <div class="row">
             <div class="large-6 columns">
-              <label>Username <input type="text" name="username" id="username" placeholder="Username">
+              <label>Username <input type="text" name="username" id="username" placeholder="Username" class="error">
               </label>
             </div>
             <div class="large-6 columns">
