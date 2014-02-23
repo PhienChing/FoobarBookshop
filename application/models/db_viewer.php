@@ -43,6 +43,19 @@ class Db_viewer extends CI_Model {
 		return $query->result_array();
 	}
 	
+	/* returns all products and their corresponding quantity */
+	function getInventory() {
+		$query = $this->db->query(
+							'SELECT p.productID AS productID, p.title AS title, 
+									p.productType AS productType, p.synopsis AS synopsis, 
+									p.price AS price, i.quantity AS quantity
+							FROM product p
+							INNER JOIN inventory i
+							ON p.productID=i.productID');
+							
+		return $query->result_array();
+	}
+	
 	/* returns all transactions in database */
 	function getTransactions() {
 		$query = $this->db->query(

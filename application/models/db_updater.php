@@ -10,6 +10,8 @@ class Db_updater extends CI_Model {
 		$this->load->database();
 	}
 	
+//////////////////////////////////////   PERSON   //////////////////////////////////////
+
 	/* Inserts a new row in the Person table
 	 * Assumption: data for insertion has already been screened */
 	function newUser($data) {
@@ -18,8 +20,40 @@ class Db_updater extends CI_Model {
 	}
 
 	/**/
-	function editUser($id, $data) {
-		$this->db->where('userID', $id);
+	function editUser($userID, $data) {
+		$this->db->where('userID', $userID);
 		$this->db->update('person', $data);
 	}
+	
+	/**/
+	function deleteUser($userID) {
+		$this->db->where('userID', $userID);
+		$this->db->delete('person');
+	}
+	
+//////////////////////////////////////   PRODUCT   //////////////////////////////////////
+		
+	function addProduct($data) {
+	
+		$this->db->insert('product', $data);
+		
+	}
+	
+	/**/
+	function editProduct($productID, $data) {
+		$this->db->where('productID', $productID);
+		$this->db->update('product', $data);
+	}
+	
+	/**/
+	function deleteProduct($productID) {
+		$this->db->where('productID', $productID);
+		$this->db->delete('product');
+	}
+	
+/////////////////////////////////////   INVENTORY   /////////////////////////////////////
+
+	function updateInventory($inventory) {
+	
+	}	
 }

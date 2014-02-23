@@ -26,7 +26,7 @@ $assets = $this->config->item('assets');
 
 <!-- le Products -->
 <div class="row">
-	<?php foreach ($products as $item): ?>
+	<?php foreach ($inventory as $item): ?>
 
 	<div class="large-3 columns">
 	 	<ul class="pricing-table">
@@ -34,6 +34,7 @@ $assets = $this->config->item('assets');
   			<li class="price">PHP <?php echo number_format($item['price'], 2, '.', '') ?></li>
   			<li class="description"><?php echo $item['synopsis'] ?></li>
   			<li class="bullet-item"><?php echo $item['productType'] ?></li>
+  			<li><?php echo $item['quantity'] ?></li>
 		</ul>
 	</div>
 	
