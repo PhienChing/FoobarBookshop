@@ -19,7 +19,7 @@ $assets = $this->config->item('assets');
 			<li><a href="#" class="tiny button success" data-reveal-id="addProduct" data-reveal><i class="fa fa-plus"></i> Add Product</a></li>
 			<li><a href="#" class="tiny button" data-reveal-id="editProduct" data-reveal><i class="fa fa-pencil"></i> Edit Product</a></li>
 			<li><a href="#" class="tiny button alert" data-reveal-id="deleteProduct" data-reveal><i class="fa fa-times"></i> Delete Product</a></li>
-  	</ul>
+  		</ul>
 	</div>
 </div>
 
@@ -127,7 +127,7 @@ $assets = $this->config->item('assets');
     </div>
     <div class="row">
       <div class="large-3 large-offset-9 columns">
-        <button type="submit" class="button expand"><i class="fa fa-pencil-square-o"></i> Edit Profile</button>
+        <button type="submit" class="button expand success"><i class="fa fa-pencil-square-o"></i> Edit Profile</button>
       </div>
     </div>
   </form>
@@ -274,18 +274,18 @@ $assets = $this->config->item('assets');
 <div id="editProduct" class="reveal-modal" data-reveal>
   <form>
     <div class="row">
-      <div class="large-4 columns">
-        <label>Existing Product
-            <select name="productID" id="productID">
-                <option value="Product Name">ID + Product Name</option>
-            </select>
-          </label>
-      </div>
-    </div>
-    <div class="row">
       <div class="large-12 columns">
         <fieldset>
           <legend>Product Information</legend>
+          <div class="row">
+  			<div class="large-4 columns">
+  				<label>Existing Product
+		        	<select name="Title" id="Title">
+		          		<option value="Product Name">ID + Product Name</option>
+		        	</select>
+		      	</label>
+  			</div>
+  		  </div>
           <div class="row">
             <div class="large-4 columns">
               <label>Title <input type="text" name="title" id="title" placeholder="Title">

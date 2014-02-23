@@ -21,11 +21,11 @@ $assets = $this->config->item('assets');
     <table>
       <thead>
         <tr>
-          <th width="100">User ID</th>          
-          <th width="350">Name</th>
-          <th width="200">Position</th>
-          <th width="200">Status</th>
-          <th width="200">Lock/Unlock</th>
+        <th width="100">User ID</th>          
+          <th width="200">Name</th>
+          <th>Position</th>
+          <th width="75">Status</th>
+          <th width="125">Lock/Unlock</th>
         </tr>
       </thead>
       <tbody>
@@ -34,36 +34,21 @@ $assets = $this->config->item('assets');
           <td>Title</td>
           <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
           <td>$99.00</td>
-          <td>
-            <ul class="button-group round">
-              <li><a href="#" class="tiny button success" data-reveal-id="addUser" data-reveal><i class="fa fa-lock"></i> Lock</a></li>
-              <li><a href="#" class="tiny button alert" data-reveal-id="editUser" data-reveal><i class="fa fa-unlock"></i> Unlock</a></li>
-            </ul>
-          </td>
+          <td><i class="fa fa-lock fa-2x"></i> <i class="fa fa-unlock fa-2x"></i></td>
         </tr>
         <tr>
           <td>999</td>
           <td>Title</td>
           <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
           <td>$99.00</td>
-          <td>
-            <ul class="button-group round">
-              <li><a href="#" class="tiny button success" data-reveal-id="addUser" data-reveal><i class="fa fa-lock"></i> Lock</a></li>
-              <li><a href="#" class="tiny button alert" data-reveal-id="editUser" data-reveal><i class="fa fa-unlock"></i> Unlock</a></li>
-            </ul>
-          </td>
+          <td><i class="fa fa-lock fa-2x"></i> <i class="fa fa-unlock fa-2x"></i></td>
         </tr>
         <tr>
           <td>999</td>
           <td>Title</td>
           <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
           <td>$99.00</td>
-          <td>
-            <ul class="button-group round">
-              <li><a href="#" class="tiny button success" data-reveal-id="addUser" data-reveal><i class="fa fa-lock"></i> Lock</a></li>
-              <li><a href="#" class="tiny button alert" data-reveal-id="editUser" data-reveal><i class="fa fa-unlock"></i> Unlock</a></li>
-            </ul>
-          </td>
+          <td><i class="fa fa-lock fa-2x"></i> <i class="fa fa-unlock fa-2x"></i></td>
         </tr>
       </tbody>
     </table>
@@ -160,7 +145,7 @@ $assets = $this->config->item('assets');
     </div>
     <div class="row">
       <div class="large-3 large-offset-9 columns">
-        <button type="submit" class="button expand"><i class="fa fa-pencil-square-o"></i> Edit Profile</button>
+        <button type="submit" class="button expand success"><i class="fa fa-pencil-square-o"></i> Edit Profile</button>
       </div>
     </div>
   </form>
@@ -259,97 +244,44 @@ $assets = $this->config->item('assets');
 
 <!-- Add User -->
 <div id="addUser" class="reveal-modal" data-reveal>
-  <form method="post">
+  <form>
     <div class="row">
-      <div class="large-6 columns">
+      <div class="large-12 columns">
         <fieldset>
-          <legend>User Credentials</legend>
-          <div class="row">
-            <div class="large-6 columns">
-              <label>Username <input type="text" name="username" id="username" placeholder="Username">
-              </label>
-            </div>
-            <div class="large-6 columns">
-              <label>Password <input type="password" name="password" id="password" placeholder="Password">
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-6 columns">
-              <label>E-mail Address <input type="text" name="emailAdd" id="emailAdd" placeholder="E-mail Address">
-              </label>
-            </div>
-             <div class="large-6 columns">
-              <label>Position <input type="text" name="position" id="position" placeholder="Position">
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-      <div class="large-6 columns">
-        <fieldset>
-          <legend>Personal Information</legend>
+          <legend>User Information</legend>
           <div class="row">
             <div class="large-4 columns">
-              <label>First Name <input type="text" name="firstName" id="firstName" placeholder="First Name">
+              <label>Title <input type="text" name="title" id="title" placeholder="Title">
               </label>
             </div>
             <div class="large-4 columns">
-              <label>Middle Initial <input type="text" name="middleInitial" id="middleInitial" placeholder="Middle Initial">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Last Name <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+		      <label>Type
+		        <select name="UserType" id="UserType">
+		          <option value="Book">Book</option>
+		          <option value="Magazine">Magazine</option>
+		          <option value="Audio CD">Audio CD</option>
+		          <option value="DVD">DVD</option>
+		        </select>
+		      </label>
+    	   	</div>
+    	   	<div class="large-4 columns">
+              <label>Price <input type="text" name="price" id="price" placeholder="Price">
               </label>
             </div>
           </div>
           <div class="row">
             <div class="large-12 columns">
-              <label>Birthday <input type="text" name="birthday" id="birthday" placeholder="Birthday (Temporary)">
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <fieldset>
-          <legend>Billing & Delivery Address</legend>
-          <div class="row">
-            <div class="large-4 columns">
-              <label>House/Apartment No. <input type="text" name="houseAptNo" id="houseAptNo" placeholder="House/Apartment No.">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Street <input type="password" name="street" id="street" placeholder="Street">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Subdivision <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision">
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-4 columns">
-              <label>City <input type="password" name="city" id="city" placeholder="City">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Postal Code <input type="text" name="postalCode" id="postalCode" placeholder="Postal Code">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Country <input type="password" name="country" id="country" placeholder="Country">
-              </label>
-            </div>
+		      <label>Synopsis/Summary
+        		<textarea placeholder="Synopsis/Summary" name="synopsis" id="synopsis"></textarea>
+      		  </label>
+    	   	</div>
           </div>
         </fieldset>
       </div>
     </div>
     <div class="row">
       <div class="large-3 large-offset-9 columns">
-        <button type="submit" class="button expand success"><i class="fa fa-pencil"></i> Add User</button>
+        <button type="submit" class="button expand success"><i class="fa fa-plus"></i> Add User</button>
       </div>
     </div>
   </form>
@@ -358,99 +290,46 @@ $assets = $this->config->item('assets');
 
 <!-- Edit User -->
 <div id="editUser" class="reveal-modal" data-reveal>
-  <form method="post">
+  <form>
     <div class="row">
-      <div class="large-4 columns">
-        <label>Existing User
-            <select name="userID" id="userID">
-                <option value="Product Name">User ID + Name</option>
-            </select>
-          </label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-6 columns">
+      <div class="large-12 columns">
         <fieldset>
-          <legend>User Credentials</legend>
+          <legend>User Information</legend>
           <div class="row">
-            <div class="large-6 columns">
-              <label>Username <input type="text" name="username" id="username" placeholder="Username">
-              </label>
-            </div>
-            <div class="large-6 columns">
-              <label>Password <input type="password" name="password" id="password" placeholder="Password">
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-6 columns">
-              <label>E-mail Address <input type="text" name="emailAdd" id="emailAdd" placeholder="E-mail Address">
-              </label>
-            </div>
-             <div class="large-6 columns">
-              <label>Position <input type="text" name="position" id="position" placeholder="Position">
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-      <div class="large-6 columns">
-        <fieldset>
-          <legend>Personal Information</legend>
+  			<div class="large-4 columns">
+  				<label>Existing User
+		        	<select name="Title" id="Title">
+		          		<option value="User Name">ID + User Name</option>
+		        	</select>
+		      	</label>
+  			</div>
+  		  </div>
           <div class="row">
             <div class="large-4 columns">
-              <label>First Name <input type="text" name="firstName" id="firstName" placeholder="First Name">
+              <label>Title <input type="text" name="title" id="title" placeholder="Title">
               </label>
             </div>
             <div class="large-4 columns">
-              <label>Middle Initial <input type="text" name="middleInitial" id="middleInitial" placeholder="Middle Initial">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Last Name <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+		      <label>Type
+		        <select name="UserType" id="UserType">
+		          <option value="Book">Book</option>
+		          <option value="Magazine">Magazine</option>
+		          <option value="Audio CD">Audio CD</option>
+		          <option value="DVD">DVD</option>
+		        </select>
+		      </label>
+    	   	</div>
+    	   	<div class="large-4 columns">
+              <label>Price <input type="text" name="price" id="price" placeholder="Price">
               </label>
             </div>
           </div>
           <div class="row">
             <div class="large-12 columns">
-              <label>Birthday <input type="text" name="birthday" id="birthday" placeholder="Birthday (Temporary)">
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <fieldset>
-          <legend>Billing & Delivery Address</legend>
-          <div class="row">
-            <div class="large-4 columns">
-              <label>House/Apartment No. <input type="text" name="houseAptNo" id="houseAptNo" placeholder="House/Apartment No.">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Street <input type="password" name="street" id="street" placeholder="Street">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Subdivision <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision">
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-4 columns">
-              <label>City <input type="password" name="city" id="city" placeholder="City">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Postal Code <input type="text" name="postalCode" id="postalCode" placeholder="Postal Code">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Country <input type="password" name="country" id="country" placeholder="Country">
-              </label>
-            </div>
+		      <label>Synopsis/Summary
+        		<textarea placeholder="Synopsis/Summary" name="synopsis" id="synopsis"></textarea>
+      		  </label>
+    	   	</div>
           </div>
         </fieldset>
       </div>
@@ -472,34 +351,38 @@ $assets = $this->config->item('assets');
         <table>
 		  <thead>
 		    <tr>
-			    <th width="100">User ID</th>		    	
-		      <th width="400">Name</th>
-		      <th width="250">Position</th>
-		      <th width="250">Status</th>
+			  <th width="100">User ID</th>		    	
+		      <th width="200">Title</th>
+		      <th>Synopsis/Summary</th>
+		      <th width="75">Price</th>
+		      <th width="125">Type</th>
 		      <th width="50">Delete</th>
 		    </tr>
 		  </thead>
 		  <tbody>
 		    <tr>
 		      <td>999</td>
-		      <td>Unknown</td>
-		      <td>Administrator</td>
-		      <td>Locked</td>
+		      <td>Title</td>
+		      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+		      <td>$99.00</td>
+		      <td>Book</td>
 		      <td><input id="checkbox1" name="checkbox1" type="checkbox"></td>
 		    </tr>
 		    <tr>
 		      <td>999</td>
-          <td>Unknown</td>
-          <td>Administrator</td>
-          <td>Locked</td>
-          <td><input id="checkbox1" name="checkbox2" type="checkbox"></td>
+		      <td>Title</td>
+		      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+		      <td>$99.00</td>
+		      <td>Book</td>
+		      <td><input id="checkbox2" name="checkbox2" type="checkbox"></td>
 		    </tr>
 		    <tr>
 		      <td>999</td>
-          <td>Unknown</td>
-          <td>Administrator</td>
-          <td>Locked</td>
-          <td><input id="checkbox1" name="checkbox3" type="checkbox"></td>
+		      <td>Title</td>
+		      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+		      <td>$99.00</td>
+		      <td>Book</td>
+		      <td><input id="checkbox3" name="checkbox3" type="checkbox"></td>
 		    </tr>
 		  </tbody>
 		</table>
@@ -508,101 +391,6 @@ $assets = $this->config->item('assets');
     <div class="row">
       <div class="large-3 large-offset-9 columns">
         <button type="submit" class="button expand alert"><i class="fa fa-times"></i> Delete User</button>
-      </div>
-    </div>
-  </form>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
-
-<!-- Sign Up Form -->
-<div id="signUp" class="reveal-modal" data-reveal>
-  <form method="post">
-    <div class="row">
-      <div class="large-6 columns">
-        <fieldset>
-          <legend>User Credentials</legend>
-          <div class="row">
-            <div class="large-6 columns">
-              <label>Username <input type="text" name="username" id="username" placeholder="Username">
-              </label>
-            </div>
-            <div class="large-6 columns">
-              <label>Password <input type="password" name="password" id="password" placeholder="Password">
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>E-mail Address <input type="text" name="emailAdd" id="emailAdd" placeholder="E-mail Address">
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-      <div class="large-6 columns">
-        <fieldset>
-          <legend>Personal Information</legend>
-          <div class="row">
-            <div class="large-4 columns">
-              <label>First Name <input type="text" name="firstName" id="firstName" placeholder="First Name">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Middle Initial <input type="text" name="middleInitial" id="middleInitial" placeholder="Middle Initial">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Last Name <input type="text" name="lastName" id="lastName" placeholder="Last Name">
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Birthday <input type="text" name="birthday" id="birthday" placeholder="Birthday (Temporary)">
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-12 columns">
-        <fieldset>
-          <legend>Billing & Delivery Address</legend>
-          <div class="row">
-            <div class="large-4 columns">
-              <label>House/Apartment No. <input type="text" name="houseAptNo" id="houseAptNo" placeholder="House/Apartment No.">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Street <input type="password" name="street" id="street" placeholder="Street">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Subdivision <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision">
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-4 columns">
-              <label>City <input type="password" name="city" id="city" placeholder="City">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Postal Code <input type="text" name="postalCode" id="postalCode" placeholder="Postal Code">
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Country <input type="password" name="country" id="country" placeholder="Country">
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-3 large-offset-9 columns">
-        <button type="submit" class="button expand success"><i class="fa fa-pencil"></i> Sign Up</button>
       </div>
     </div>
   </form>
