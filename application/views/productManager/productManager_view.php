@@ -380,65 +380,63 @@ $assets = $this->config->item('assets');
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
-
 <!-- Manage Inventory -->
 <div id="manageInventory" class="reveal-modal" data-reveal>
     <div class="row">
-      <form>
-      <div class="large-12 columns">
-        <fieldset>
-          <legend>Product Search</legend>
-          <div class="row">
-            <div class="large-12 columns">
-              <input type="text" name="product" id="product" placeholder="Enter product name here...">
+      <div class="large-6 columns">
+        <form method="post">
+          <fieldset>
+            <legend>Product Search</legend>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Product <input type="text" name="product" id="product" placeholder="Enter product name here...">
+                </label>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="large-2 columns">
-              <input id="book" type="checkbox"><label for="book">Book</label>
+            <div class="row">
+              <div class="large-3 columns">
+                <input id="book" type="checkbox"><label for="book"><h5><small>Book</small></h5></label>
+              </div>
+              <div class="large-3 columns">
+                <input id="magazine" type="checkbox"><label for="magazine"><h5><small>Magazine</small></h5></label>
+              </div>
+             <div class="large-3 columns">
+                <input id="audio" type="checkbox"><label for="audio"><h5><small>Audio CD</small></h5></label>
+              </div>
+              <div class="large-3 columns">
+                <input id="dvd" type="checkbox"><label for="dvd"><h5><small>DVD</small></h5></label>
+              </div>
             </div>
-            <div class="large-2 columns">
-              <input id="magazine" type="checkbox"><label for="magazine">Magazine</label>
+          </fieldset>
+            <div class="row">
+              <div class="large-3 large-offset-9 columns">
+                <button type="submit" class="button expand alert"><i class="fa fa-search"></i> Search</button>
+              </div>
             </div>
-           <div class="large-2 columns">
-              <input id="audio" type="checkbox"><label for="audio">Audio CD</label>
-            </div>
-            <div class="large-2 columns">
-              <input id="dvd" type="checkbox"><label for="dvd">DVD</label>
-            </div>
-            <div class="large-4 columns">
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-2 large-offset-10 columns">
-              <button type="submit" class="button expand"><i class="fa fa-pencil"></i> Search</button>
-            </div>
-          </div>
-        </fieldset>
+        </form>
       </div>
-      </form>
-    </div>
-    <div class="row">
-      <form>
-      <div class="large-12 columns">
-        <fieldset>
-          <legend>Product Inventory</legend>
-          <div class="row">
-            <div class="large-6 columns">
-              <label>Product Name <input type="text" name="product" id="product" placeholder="Display Product Name Here" disabled></label>
+       <div class="large-6 columns">
+        <form method="post">
+          <fieldset>
+            <legend>Product Quantity</legend>
+            <div class="row">
+              <div class="large-6 columns">
+                <label>Product <input type="text" name="product" id="product" placeholder="Display Product Here" disabled>
+                </label>
+              </div>
+              <div class="large-6 columns">
+                <label>Quantity <input type="text" name="quantity" id="quantity" placeholder="Quantity">
+                </label>
+              </div>
             </div>
-             <div class="large-6 columns">
-              <label>Quantity <input type="text" name="quantity" id="quantity" placeholder="Quantity">
+          </fieldset>
+            <div class="row">
+              <div class="large-3 large-offset-9 columns">
+                <button type="submit" class="button expand secondary"><i class="fa fa-pencil"></i> Stock-Up</button>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="large-2 large-offset-10 columns">
-              <button type="submit" class="button expand"><i class="fa fa-pencil"></i> Update Quantity</button>
-            </div>
-          </div>
-        </fieldset>
+        </form>
       </div>
-      </form>
     </div>
   <a class="close-reveal-modal">&#215;</a>
 </div>
