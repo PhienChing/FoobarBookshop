@@ -2,6 +2,12 @@
 
 class Administrator extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Db_viewer');
+	}
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -19,12 +25,20 @@ class Administrator extends CI_Controller {
 	 */
 	public function index()
 	{
+		$data['users'] = $this->getUsers();
+	
 		$this->load->view('shared/header');
 		$this->load->view('admin/admin_nav');
-		$this->load->view('admin/admin_view');
+		$this->load->view('admin/admin_view', $data);
 		$this->load->view('shared/footer');
 	}
 	
+	function getUsers()
+	{
+		$data = $this->Db_viewer->getUsers();
+		
+		return $data;
+	}
 }
 
 /* End of file welcome.php */

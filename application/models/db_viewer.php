@@ -36,18 +36,29 @@ class Db_viewer extends CI_Model {
 		return $row->position;
 	}
 	
+	/* returns all products in database */
 	function getProducts() {
 		$query = $this->db->get('product');
 		
 		return $query->result_array();
 	}
 	
+	/* returns all transactions in database */
 	function getTransactions() {
-		$query = $this->db->query('SELECT t.customerID, p.title AS title, p.productType AS type, t.dateTime
+		$query = $this->db->query(
+							'SELECT t.customerID, p.title AS title, p.productType AS type, t.dateTime
 							FROM transaction t
 							INNER JOIN product p
 							ON t.productID=p.productID');
 		
+		return $query->result_array();
+	}
+	
+	/* returns less sensitive data of all users in the database */
+	function getUsers() {
+		$this->db->select('firstName, middleInitial, lastName, userID, username, position, status');
+		$query = $this->db->get('person');
+							
 		return $query->result_array();
 	}
 }

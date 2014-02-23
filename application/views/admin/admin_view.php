@@ -29,11 +29,12 @@ $assets = $this->config->item('assets');
         </tr>
       </thead>
       <tbody>
+      	<?php foreach ($users as $person) : ?>
         <tr>
-          <td>999</td>
-          <td>Title</td>
-          <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-          <td>$99.00</td>
+          <td><?php echo $person['userID'] ?></td>
+          <td><?php echo $person['lastName'] ?>, <?php echo $person['firstName'] ?> <?php echo $person['middleInitial'] ?></td>
+          <td><?php echo $person['position'] ?></td>
+          <td><?php echo $person['status'] ?></td>
           <td>
             <ul class="button-group round">
               <li><a href="#" class="tiny button success" data-reveal-id="addUser" data-reveal><i class="fa fa-lock"></i> Lock</a></li>
@@ -41,30 +42,8 @@ $assets = $this->config->item('assets');
             </ul>
           </td>
         </tr>
-        <tr>
-          <td>999</td>
-          <td>Title</td>
-          <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-          <td>$99.00</td>
-          <td>
-            <ul class="button-group round">
-              <li><a href="#" class="tiny button success" data-reveal-id="addUser" data-reveal><i class="fa fa-lock"></i> Lock</a></li>
-              <li><a href="#" class="tiny button alert" data-reveal-id="editUser" data-reveal><i class="fa fa-unlock"></i> Unlock</a></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td>999</td>
-          <td>Title</td>
-          <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-          <td>$99.00</td>
-          <td>
-            <ul class="button-group round">
-              <li><a href="#" class="tiny button success" data-reveal-id="addUser" data-reveal><i class="fa fa-lock"></i> Lock</a></li>
-              <li><a href="#" class="tiny button alert" data-reveal-id="editUser" data-reveal><i class="fa fa-unlock"></i> Unlock</a></li>
-            </ul>
-          </td>
-        </tr>
+        <?php endforeach ?>
+        
       </tbody>
     </table>
   </div>
