@@ -233,11 +233,11 @@ $assets = $this->config->item('assets');
         <fieldset>
           <legend>Product Information</legend>
           <div class="row">
-            <div class="large-4 columns">
+            <div class="large-6 columns">
               <label>Title <input type="text" name="title" id="title" placeholder="Title">
               </label>
             </div>
-            <div class="large-4 columns">
+            <div class="large-6 columns">
 		      <label>Type
 		        <select name="productType" id="productType">
 		          <option value="Book">Book</option>
@@ -247,8 +247,14 @@ $assets = $this->config->item('assets');
 		        </select>
 		      </label>
     	   	</div>
-    	   	<div class="large-4 columns">
+          </div>
+          <div class="row">
+            <div class="large-6 columns">
               <label>Price <input type="text" name="price" id="price" placeholder="Price">
+              </label>
+            </div>
+            <div class="large-6 columns">
+              <label>Quantity <input type="text" name="Quantity" id="Quantity" placeholder="Quantity">
               </label>
             </div>
           </div>
@@ -288,22 +294,28 @@ $assets = $this->config->item('assets');
         <fieldset>
           <legend>Product Information</legend>
           <div class="row">
-            <div class="large-4 columns">
+            <div class="large-6 columns">
               <label>Title <input type="text" name="title" id="title" placeholder="Title">
               </label>
             </div>
-            <div class="large-4 columns">
-		      <label>Type
-		        <select name="productType" id="productType">
-		          <option value="Book">Book</option>
-		          <option value="Magazine">Magazine</option>
-		          <option value="Audio CD">Audio CD</option>
-		          <option value="DVD">DVD</option>
-		        </select>
-		      </label>
-    	   	</div>
-    	   	<div class="large-4 columns">
+            <div class="large-6 columns">
+          <label>Type
+            <select name="productType" id="productType">
+              <option value="Book">Book</option>
+              <option value="Magazine">Magazine</option>
+              <option value="Audio CD">Audio CD</option>
+              <option value="DVD">DVD</option>
+            </select>
+          </label>
+          </div>
+          </div>
+          <div class="row">
+            <div class="large-6 columns">
               <label>Price <input type="text" name="price" id="price" placeholder="Price">
+              </label>
+            </div>
+            <div class="large-6 columns">
+              <label>Quantity <input type="text" name="Quantity" id="Quantity" placeholder="Quantity">
               </label>
             </div>
           </div>
@@ -382,61 +394,53 @@ $assets = $this->config->item('assets');
 
 <!-- Manage Inventory -->
 <div id="manageInventory" class="reveal-modal" data-reveal>
+  <form method="post" action="">
     <div class="row">
-      <div class="large-6 columns">
-        <form method="post">
-          <fieldset>
-            <legend>Product Search</legend>
-            <div class="row">
-              <div class="large-12 columns">
-                <label>Product <input type="text" name="product" id="product" placeholder="Enter product name here...">
-                </label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="large-3 columns">
-                <input id="book" type="checkbox"><label for="book"><h5><small>Book</small></h5></label>
-              </div>
-              <div class="large-3 columns">
-                <input id="magazine" type="checkbox"><label for="magazine"><h5><small>Magazine</small></h5></label>
-              </div>
-             <div class="large-3 columns">
-                <input id="audio" type="checkbox"><label for="audio"><h5><small>Audio CD</small></h5></label>
-              </div>
-              <div class="large-3 columns">
-                <input id="dvd" type="checkbox"><label for="dvd"><h5><small>DVD</small></h5></label>
-              </div>
-            </div>
-          </fieldset>
-            <div class="row">
-              <div class="large-3 large-offset-9 columns">
-                <button type="submit" class="button expand alert"><i class="fa fa-search"></i> Search</button>
-              </div>
-            </div>
-        </form>
-      </div>
-       <div class="large-6 columns">
-        <form method="post">
-          <fieldset>
-            <legend>Product Quantity</legend>
-            <div class="row">
-              <div class="large-6 columns">
-                <label>Product <input type="text" name="product" id="product" placeholder="Display Product Here" disabled>
-                </label>
-              </div>
-              <div class="large-6 columns">
-                <label>Quantity <input type="text" name="quantity" id="quantity" placeholder="Quantity">
-                </label>
-              </div>
-            </div>
-          </fieldset>
-            <div class="row">
-              <div class="large-3 large-offset-9 columns">
-                <button type="submit" class="button expand secondary"><i class="fa fa-pencil"></i> Stock-Up</button>
-              </div>
-            </div>
-        </form>
+      <div class="row collapse">
+        <div class="small-10 columns">
+          <input type="text" name="product" id="product" placeholder="Enter your desired product here...">
+        </div>
+        <div class="small-2 columns">
+          <button type="submit" class="button postfix alert"><i class="fa fa-search"></i> Search</button>
+        </div>
       </div>
     </div>
+    <div class="row">
+      <div class="large-2 large-offset-2 columns">
+        <input id="book" type="checkbox"><label for="book"><h3><small>Book</small></h3></label>
+      </div>
+      <div class="large-2 columns">
+        <input id="magazine" type="checkbox"><label for="magazine"><h3><small>Magazine</small></h3></label>
+      </div>
+      <div class="large-2 columns">
+        <input id="audio" type="checkbox"><label for="audio"><h3><small>Audio CD</small></h3></label>
+      </div>
+      <div class="large-2 columns">
+        <input id="dvd" type="checkbox"><label for="dvd"><h3><small>DVD</small></h3></label>
+      </div>
+      <div class="large-2 columns">
+      </div>
+    </div>
+  </form>  
+  <form method="post">
+    <fieldset>
+      <legend>Product Quantity</legend>
+      <div class="row">
+        <div class="large-6 columns">
+          <label>Product <input type="text" name="product" id="product" placeholder="Display Product Here" disabled>
+          </label>
+        </div>
+        <div class="large-6 columns">
+          <label>Quantity <input type="text" name="quantity" id="quantity" placeholder="Quantity">
+          </label>
+        </div>
+      </div>
+    </fieldset>
+      <div class="row">
+        <div class="large-3 large-offset-9 columns">
+          <button type="submit" class="button expand secondary"><i class="fa fa-truck"></i> Update Quantity</button>
+        </div>
+      </div>
+  </form>
   <a class="close-reveal-modal">&#215;</a>
 </div>
