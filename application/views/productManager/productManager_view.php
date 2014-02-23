@@ -19,7 +19,7 @@ $assets = $this->config->item('assets');
 			<li><a href="#" class="tiny button success" data-reveal-id="addProduct" data-reveal><i class="fa fa-plus"></i> Add Product</a></li>
 			<li><a href="#" class="tiny button" data-reveal-id="editProduct" data-reveal><i class="fa fa-pencil"></i> Edit Product</a></li>
 			<li><a href="#" class="tiny button alert" data-reveal-id="deleteProduct" data-reveal><i class="fa fa-times"></i> Delete Product</a></li>
-      <li><a href="#" class="tiny button secondary" data-reveal-id="manageInventory" data-reveal><i class="fa fa-times"></i> Manage Inventory</a></li>
+      <li><a href="#" class="tiny button secondary" data-reveal-id="manageInventory" data-reveal><i class="fa fa-truck"></i> Manage Inventory</a></li>
   	</ul>
 	</div>
 </div>
