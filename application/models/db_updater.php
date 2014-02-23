@@ -6,4 +6,20 @@
 
 class Db_updater extends CI_Model {
 
+	public function __construct() {
+		$this->load->database();
+	}
+	
+	/* Inserts a new row in the Person table
+	 * Assumption: data for insertion has already been screened */
+	function newUser($data) {
+		//$data should contain all values for insertion
+		$this->db->insert('person', $data);
+	}
+
+	/**/
+	function editUser($id, $data) {
+		$this->db->where('userID', $id);
+		$this->db->update('person', $data);
+	}
 }
