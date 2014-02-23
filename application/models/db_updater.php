@@ -8,6 +8,7 @@ class Db_updater extends CI_Model {
 
 	public function __construct() {
 		$this->load->database();
+		$this->load->model('Db_viewer');
 	}
 	
 //////////////////////////////////////   PERSON   //////////////////////////////////////
@@ -32,11 +33,20 @@ class Db_updater extends CI_Model {
 	}
 	
 //////////////////////////////////////   PRODUCT   //////////////////////////////////////
-		
-	function addProduct($data) {
 	
-		$this->db->insert('product', $data);
+	//data passed contains title, type, synopsis, price, and quantity	
+	function addProduct($data) {
+		//insert to product table
+		$product = array('title' => $data['title'], 'productType' => $data['productType'],
+						 'synopsis' => $data['synopsis'], 'price' => $data['price']);
+	
+		$this->db->insert('product', $product);
 		
+		//get product id of newly inserted data
+		$inventory = $this->Db_viewer->getProductID($product);
+		$inventory['quantity'] = $data['Quantity'];
+		
+		$this->db->insert('inventory', $inventory);
 	}
 	
 	/**/

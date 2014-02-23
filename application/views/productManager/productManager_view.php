@@ -228,7 +228,9 @@ $assets = $this->config->item('assets');
 
 <!-- Add Product -->
 <div id="addProduct" class="reveal-modal" data-reveal>
-  <form method="post" action="">
+  <!--form method="post" action=""-->
+  <?php $this->load->helper('form');
+  		echo form_open('index.php?/productManager/addProduct'); ?>
     <div class="row">
       <div class="large-12 columns">
         <fieldset>
@@ -274,7 +276,8 @@ $assets = $this->config->item('assets');
         <button type="submit" class="button expand success"><i class="fa fa-plus"></i> Add Product</button>
       </div>
     </div>
-  </form>
+  <!--/form-->
+  <?php echo form_close() ?>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
