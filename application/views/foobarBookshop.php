@@ -51,25 +51,28 @@ $assets = $this->config->item('assets');
 
 <!-- Sign Up Form -->
 <div id="signUp" class="reveal-modal" data-reveal>
-  <form method="post">
+  <form data-abide method="post">
     <div class="row">
       <div class="large-6 columns">
         <fieldset>
           <legend>User Credentials</legend>
           <div class="row">
-            <div class="large-6 columns">
-              <label>Username <input type="text" name="username" id="username" placeholder="Username" class="error">
+            <div class="large-12 columns">
+              <label>Username <input type="text" name="username" id="username" placeholder="Username" required>
               </label>
-            </div>
-            <div class="large-6 columns">
-              <label>Password <input type="password" name="password" id="password" placeholder="Password">
-              </label>
+              <small class="error">Username is required and must be a string.</small>
             </div>
           </div>
           <div class="row">
-            <div class="large-12 columns">
-              <label>E-mail Address <input type="text" name="emailAdd" id="emailAdd" placeholder="E-mail Address">
+            <div class="large-6 columns">
+              <label>Password <input type="password" pattern="password" name="password" id="password" placeholder="Password" required>
               </label>
+              <small class="error">Passwords must be at least 8 characters with 1 capital letter, 1 number, and one special character.</small>
+            </div>
+            <div class="large-6 columns">
+              <label>Confirm Password <input type="password" pattern="password" data-equalto="password" name="confirm" id="confirm" placeholder="Confirm Password" required>
+              </label>
+              <small class="error">Passwords must match.</small>
             </div>
           </div>
         </fieldset>
@@ -79,22 +82,26 @@ $assets = $this->config->item('assets');
           <legend>Personal Information</legend>
           <div class="row">
             <div class="large-4 columns">
-              <label>First Name <input type="text" name="firstName" id="firstName" placeholder="First Name">
+              <label>First Name <input type="text" pattern="alpha" name="firstName" id="firstName" placeholder="First Name" required>
               </label>
+              <small class="error">Name is required and must be a string.</small>
             </div>
             <div class="large-4 columns">
-              <label>Middle Initial <input type="text" name="middleInitial" id="middleInitial" placeholder="Middle Initial">
+              <label>Middle Initial <input type="text" pattern="alpha" name="middleInitial" id="middleInitial" placeholder="Middle Initial" required>
               </label>
+              <small class="error">Name is required and must be a string.</small>
             </div>
             <div class="large-4 columns">
-              <label>Last Name <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+              <label>Last Name <input type="text" pattern="alpha" name="lastName" id="lastName" placeholder="Last Name" required>
               </label>
+              <small class="error">Name is required and must be a string.</small>
             </div>
           </div>
           <div class="row">
             <div class="large-12 columns">
-              <label>Birthday <input type="text" name="birthday" id="birthday" placeholder="Birthday (Temporary)">
+              <label>E-mail Address <input type="text" pattern="email" name="emailAdd" id="emailAdd" placeholder="E-mail Address" required>
               </label>
+              <small class="error">E-mail Address is required must be valid.</small>
             </div>
           </div>
         </fieldset>
@@ -106,30 +113,36 @@ $assets = $this->config->item('assets');
           <legend>Billing & Delivery Address</legend>
           <div class="row">
             <div class="large-4 columns">
-              <label>House/Apartment No. <input type="text" name="houseAptNo" id="houseAptNo" placeholder="House/Apartment No.">
+              <label>House/Apartment No. <input type="text" name="houseAptNo" id="houseAptNo" placeholder="House/Apartment No." required>
               </label>
+              <small class="error">Required.</small>
             </div>
             <div class="large-4 columns">
-              <label>Street <input type="password" name="street" id="street" placeholder="Street">
+              <label>Street <input type="password" name="street" id="street" placeholder="Street" required>
               </label>
+              <small class="error">Required.</small>
             </div>
             <div class="large-4 columns">
-              <label>Subdivision <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision">
+              <label>Subdivision <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision" required>
               </label>
+              <small class="error">Required.</small>
             </div>
           </div>
           <div class="row">
             <div class="large-4 columns">
-              <label>City <input type="password" name="city" id="city" placeholder="City">
+              <label>City <input type="password" name="city" id="city" placeholder="City" required>
               </label>
+              <small class="error">Required.</small>
             </div>
             <div class="large-4 columns">
-              <label>Postal Code <input type="text" name="postalCode" id="postalCode" placeholder="Postal Code">
+              <label>Postal Code <input type="text" name="postalCode" id="postalCode" placeholder="Postal Code" required>
               </label>
+              <small class="error">Required.</small>
             </div>
             <div class="large-4 columns">
-              <label>Country <input type="password" name="country" id="country" placeholder="Country">
+              <label>Country <input type="password" name="country" id="country" placeholder="Country" required>
               </label>
+              <small class="error">Required.</small>
             </div>
           </div>
         </fieldset>
