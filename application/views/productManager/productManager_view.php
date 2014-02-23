@@ -14,11 +14,12 @@ $assets = $this->config->item('assets');
 		  <li><a href="#">DVD</a></li>
 		</ul>
 	</div>
-	<div class="large-5 large-offset-3 columns">
+	<div class="large-7 large-offset-1 columns">
 		<ul class="button-group round">
 			<li><a href="#" class="tiny button success" data-reveal-id="addProduct" data-reveal><i class="fa fa-plus"></i> Add Product</a></li>
 			<li><a href="#" class="tiny button" data-reveal-id="editProduct" data-reveal><i class="fa fa-pencil"></i> Edit Product</a></li>
 			<li><a href="#" class="tiny button alert" data-reveal-id="deleteProduct" data-reveal><i class="fa fa-times"></i> Delete Product</a></li>
+      <li><a href="#" class="tiny button secondary" data-reveal-id="manageInventory" data-reveal><i class="fa fa-times"></i> Manage Inventory</a></li>
   	</ul>
 	</div>
 </div>
@@ -376,5 +377,68 @@ $assets = $this->config->item('assets');
       </div>
     </div>
   </form>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+<!-- Manage Inventory -->
+<div id="manageInventory" class="reveal-modal" data-reveal>
+    <div class="row">
+      <form>
+      <div class="large-12 columns">
+        <fieldset>
+          <legend>Product Search</legend>
+          <div class="row">
+            <div class="large-12 columns">
+              <input type="text" name="product" id="product" placeholder="Enter product name here...">
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-2 columns">
+              <input id="book" type="checkbox"><label for="book">Book</label>
+            </div>
+            <div class="large-2 columns">
+              <input id="magazine" type="checkbox"><label for="magazine">Magazine</label>
+            </div>
+           <div class="large-2 columns">
+              <input id="audio" type="checkbox"><label for="audio">Audio CD</label>
+            </div>
+            <div class="large-2 columns">
+              <input id="dvd" type="checkbox"><label for="dvd">DVD</label>
+            </div>
+            <div class="large-4 columns">
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-2 large-offset-10 columns">
+              <button type="submit" class="button expand"><i class="fa fa-pencil"></i> Search</button>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      </form>
+    </div>
+    <div class="row">
+      <form>
+      <div class="large-12 columns">
+        <fieldset>
+          <legend>Product Inventory</legend>
+          <div class="row">
+            <div class="large-6 columns">
+              <label>Product Name <input type="text" name="product" id="product" placeholder="Display Product Name Here" disabled></label>
+            </div>
+             <div class="large-6 columns">
+              <label>Quantity <input type="text" name="quantity" id="quantity" placeholder="Quantity">
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-2 large-offset-10 columns">
+              <button type="submit" class="button expand"><i class="fa fa-pencil"></i> Update Quantity</button>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      </form>
+    </div>
   <a class="close-reveal-modal">&#215;</a>
 </div>
