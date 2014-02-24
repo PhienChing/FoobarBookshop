@@ -6,6 +6,7 @@ class ProductManager extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Db_viewer');
+		$this->load->model('Db_updater');
 	}
 
 	/**
@@ -25,7 +26,7 @@ class ProductManager extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['products'] = $this->getProducts();
+		$data['inventory'] = $this->getProducts();
 	
 		$this->load->view('shared/header');
 		$this->load->view('productManager/productManager_nav');
@@ -36,9 +37,25 @@ class ProductManager extends CI_Controller {
 	function getProducts()
 	{
 		//get query from database
-		$data = $this->Db_viewer->getProducts();
+		$data = $this->Db_viewer->getInventory();
 		
 		return $data;
+	}
+	
+	function addProduct()
+	{
+		$product = $_POST;
+		
+		//check if product already exists
+		
+		//if product does not yet exist
+		$this->Db_updater->addProduct($product);
+		
+		//if product already exists
+		
+		
+		//automatically add entry in transaction table
+		
 	}
 }
 

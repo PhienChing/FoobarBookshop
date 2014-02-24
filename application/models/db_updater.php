@@ -8,8 +8,11 @@ class Db_updater extends CI_Model {
 
 	public function __construct() {
 		$this->load->database();
+		$this->load->model('Db_viewer');
 	}
 	
+//////////////////////////////////////   PERSON   //////////////////////////////////////
+
 	/* Inserts a new row in the Person table
 	 * Assumption: data for insertion has already been screened */
 	function newUser($data) {
@@ -18,8 +21,49 @@ class Db_updater extends CI_Model {
 	}
 
 	/**/
-	function editUser($id, $data) {
-		$this->db->where('userID', $id);
+	function editUser($userID, $data) {
+		$this->db->where('userID', $userID);
 		$this->db->update('person', $data);
 	}
+	
+	/**/
+	function deleteUser($userID) {
+		$this->db->where('userID', $userID);
+		$this->db->delete('person');
+	}
+	
+//////////////////////////////////////   PRODUCT   //////////////////////////////////////
+	
+	//data passed contains title, type, synopsis, price, and quantity	
+	function addProduct($data) {
+		//insert to product table
+		$product = array('title' => $data['title'], 'productType' => $data['productType'],
+						 'synopsis' => $data['synopsis'], 'price' => $data['price']);
+	
+		$this->db->insert('product', $product);
+		
+		//get product id of newly inserted data
+		$inventory = $this->Db_viewer->getProductID($product);
+		$inventory['quantity'] = $data['Quantity'];
+		
+		$this->db->insert('inventory', $inventory);
+	}
+	
+	/**/
+	function editProduct($productID, $data) {
+		$this->db->where('productID', $productID);
+		$this->db->update('product', $data);
+	}
+	
+	/**/
+	function deleteProduct($productID) {
+		$this->db->where('productID', $productID);
+		$this->db->delete('product');
+	}
+	
+/////////////////////////////////////   INVENTORY   /////////////////////////////////////
+
+	function updateInventory($inventory) {
+	
+	}	
 }
