@@ -2,6 +2,13 @@
 
 class Login extends CI_Controller {
 
+	function __construct()
+	{
+		parent::__construct();
+
+		$this->load->helper('url');
+	}
+
   public function index() {
     /* check login credentials against database */
 	  $this->load->model('Db_viewer');
@@ -16,11 +23,16 @@ class Login extends CI_Controller {
 	
 	function loadAptPage($position) {
 		if (strcasecmp($position, "administrator") == 0) {
-			$this->load->view('shared/header');
-			//$this->load->view('admin_nav');
-			//$this->load->view('admin_view');
-			$this->load->view('shared/footer');
-			//echo "helzz yeah";
+			redirect('index.php/administrator');
+		}
+		elseif (strcasecmp($position, "accountingManager") == 0) {
+			redirect('index.php/accountingManager');
+		}
+		elseif (strcasecmp($position, "productManager") == 0) {
+			redirect('index.php/productManager');
+		}
+		elseif (strcasecmp($position, "customer") == 0) {
+			redirect('index.php/customer');
 		}
 		else {
 			echo "no";

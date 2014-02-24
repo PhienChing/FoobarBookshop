@@ -2,8 +2,19 @@
 
 class Signup extends CI_Controller {
 
+	function __construct()
+	{
+		parent::__construct();
+
+		$this->load->helper('url');
+		$this->load->model('Db_updater');
+	}
+
   public function index() {
     /* verify if unique account */
+    
+    /* insert into db */
+    $this->createAccount($_POST);
     
     
   }
@@ -15,8 +26,10 @@ class Signup extends CI_Controller {
     
   }
   
-  function createAccount() {
+  function createAccount($data) {
+  	$data['password'] = md5($data['password']);
   
+  	$this->Db_updater->newUser($data);
   }
 
 }

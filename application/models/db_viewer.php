@@ -15,7 +15,6 @@ class Db_viewer extends CI_Model {
 		$this->db->where('username', $username);
 		$query = $this->db->get('person');
 		
-		
 		return $query->result();
 	}
 	/*
@@ -27,6 +26,8 @@ class Db_viewer extends CI_Model {
 		//something
 	}
 	 */
+	 
+	 /*  */
 	function getPosition($username) {
 		$this->db->select('position');
 		$this->db->where('username', $username);
@@ -43,7 +44,7 @@ class Db_viewer extends CI_Model {
 		return $query->result_array();
 	}
 	
-	/**/
+	/*  */
 	function getProductID($product) {
 		$this->db->select('productID');
 		$this->db->where('title', $product['title']);
@@ -51,8 +52,9 @@ class Db_viewer extends CI_Model {
 		$this->db->where('title', $product['synopsis']);
 		$this->db->where('title', $product['price']);
 		$query = $this->db->get('product');
-	
-		return $query->result_array();
+		$row = $query->first_row();
+		
+		return $row->productID;
 	}
 	
 	/* returns all products and their corresponding quantity */

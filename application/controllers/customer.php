@@ -40,6 +40,22 @@ class Customer extends CI_Controller {
 		
 		return $data;
 	}
+	
+	function filterBooks() 
+	{
+	}
+	
+	function filterMagazines() 
+	{
+	}
+	
+	function filterAudioCD() 
+	{
+	}
+	
+	function filterDVD() 
+	{
+	}
 }
 
 /* End of file welcome.php */

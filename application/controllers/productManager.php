@@ -56,6 +56,9 @@ class ProductManager extends CI_Controller {
 		
 		//automatically add entry in transaction table
 		
+		
+		//return to product manager view
+		$this->index();
 	}
 }
 

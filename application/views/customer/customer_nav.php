@@ -19,7 +19,7 @@ $assets = $this->config->item('assets');
           <li><a href="#" data-reveal-id="viewProfile" data-reveal><i class="fa fa-user"></i> View Profile</a></li>
           <li><a href="#" data-reveal-id="editProfile" data-reveal><i class="fa fa-pencil-square-o"></i> Edit Profile</a></li>
           <li class="divider"></li>
-          <li><a href="#"><i class="fa fa-sign-out"></i> Log Out</a></li>
+          <li><a href="index.php/logout"><i class="fa fa-sign-out"></i>Log Out</a></li>
         </ul>
       </li>
     </ul>

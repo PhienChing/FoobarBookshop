@@ -43,10 +43,12 @@ class Db_updater extends CI_Model {
 		$this->db->insert('product', $product);
 		
 		//get product id of newly inserted data
-		$inventory = $this->Db_viewer->getProductID($product);
-		$inventory['quantity'] = $data['Quantity'];
+		$temp = $this->Db_viewer->getProductID($product);
+		//echo $temp;
+		//$inventory['productID'] = array_values($temp)[0];
+		//$inventory['quantity'] = $data['Quantity'];
 		
-		$this->db->insert('inventory', $inventory);
+		//$this->db->insert('inventory', $inventory);
 	}
 	
 	/**/
