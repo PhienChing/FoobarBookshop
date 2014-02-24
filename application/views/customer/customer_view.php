@@ -24,6 +24,8 @@ $assets = $this->config->item('assets');
   			<li class="price">PHP <?php echo number_format($item['price'], 2, '.', '') ?></li>
   			<li class="description"><?php echo $item['synopsis'] ?></li>
   			<li class="bullet-item"><?php echo $item['productType'] ?></li>
+        <!-- <li class="bullet-item"><?php echo $item['quantity'] ?> in Stock</li> -->
+        <li class="bullet-item"><button type="submit" class="button expand success"><i class="fa fa-shopping-cart"></i> Buy</button></li>
 		</ul>
 	</div>
 	<?php endforeach ?>
@@ -31,19 +33,20 @@ $assets = $this->config->item('assets');
 
 <!-- Edit Profile -->
 <div id="editProfile" class="reveal-modal" data-reveal>
-  <form>
+  <form data-abide>
     <div class="row">
       <div class="large-6 columns">
         <fieldset>
           <legend>User Credentials</legend>
           <div class="row">
             <div class="large-6 columns">
-              <label>Username <input type="text" name="username" id="username" placeholder="Username">
+              <label>Username <input type="text" name="username" id="username" placeholder="Username" disabled>
               </label>
             </div>
             <div class="large-6 columns">
-              <label>Password <input type="password" name="password" id="password" placeholder="Password">
+              <label>Password <input type="password" name="password" id="password" placeholder="Password" required>
               </label>
+              <small class="error">Passwords must be at least 8 characters with 1 capital letter, 1 number, and one special character.</small>
             </div>
           </div>
           <div class="row">
@@ -90,7 +93,7 @@ $assets = $this->config->item('assets');
               </label>
             </div>
             <div class="large-4 columns">
-              <label>Street <input type="password" name="street" id="street" placeholder="Street">
+              <label>Street <input type="text" name="street" id="street" placeholder="Street">
               </label>
             </div>
             <div class="large-4 columns">
@@ -100,7 +103,7 @@ $assets = $this->config->item('assets');
           </div>
           <div class="row">
             <div class="large-4 columns">
-              <label>City <input type="password" name="city" id="city" placeholder="City">
+              <label>City <input type="text" name="city" id="city" placeholder="City">
               </label>
             </div>
             <div class="large-4 columns">
@@ -108,7 +111,7 @@ $assets = $this->config->item('assets');
               </label>
             </div>
             <div class="large-4 columns">
-              <label>Country <input type="password" name="country" id="country" placeholder="Country">
+              <label>Country <input type="text" name="country" id="country" placeholder="Country">
               </label>
             </div>
           </div>
@@ -133,17 +136,17 @@ $assets = $this->config->item('assets');
           <legend>User Credentials</legend>
           <div class="row">
             <div class="large-6 columns">
-              <label>Username <input type="text" name="username" id="username" placeholder="Username">
+              <label>Username <input type="text" name="username" id="username" placeholder="Username" disabled>
               </label>
             </div>
             <div class="large-6 columns">
-              <label>Password <input type="password" name="password" id="password" placeholder="Password">
+              <label>Password <input type="password" name="password" id="password" placeholder="Password" disabled>
               </label>
             </div>
           </div>
           <div class="row">
             <div class="large-12 columns">
-              <label>E-mail Address <input type="text" name="emailAdd" id="emailAdd" placeholder="E-mail Address">
+              <label>E-mail Address <input type="text" name="emailAdd" id="emailAdd" placeholder="E-mail Address" disabled>
               </label>
             </div>
           </div>
@@ -154,15 +157,15 @@ $assets = $this->config->item('assets');
           <legend>Personal Information</legend>
           <div class="row">
             <div class="large-4 columns">
-              <label>First Name <input type="text" name="firstName" id="firstName" placeholder="First Name">
+              <label>First Name <input type="text" name="firstName" id="firstName" placeholder="First Name" disabled>
               </label>
             </div>
             <div class="large-4 columns">
-              <label>Middle Initial <input type="text" name="middleInitial" id="middleInitial" placeholder="Middle Initial">
+              <label>Middle Initial <input type="text" name="middleInitial" id="middleInitial" placeholder="Middle Initial" disabled>
               </label>
             </div>
             <div class="large-4 columns">
-              <label>Last Name <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+              <label>Last Name <input type="text" name="lastName" id="lastName" placeholder="Last Name" disabled>
               </label>
             </div>
           </div>
@@ -181,29 +184,29 @@ $assets = $this->config->item('assets');
           <legend>Billing & Delivery Address</legend>
           <div class="row">
             <div class="large-4 columns">
-              <label>House/Apartment No. <input type="text" name="houseAptNo" id="houseAptNo" placeholder="House/Apartment No.">
+              <label>House/Apartment No. <input type="text" name="houseAptNo" id="houseAptNo" placeholder="House/Apartment No." disabled>
               </label>
             </div>
             <div class="large-4 columns">
-              <label>Street <input type="password" name="street" id="street" placeholder="Street">
+              <label>Street <input type="text" name="street" id="street" placeholder="Street" disabled>
               </label>
             </div>
             <div class="large-4 columns">
-              <label>Subdivision <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision">
+              <label>Subdivision <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision" disabled>
               </label>
             </div>
           </div>
           <div class="row">
             <div class="large-4 columns">
-              <label>City <input type="password" name="city" id="city" placeholder="City">
+              <label>City <input type="text" name="city" id="city" placeholder="City" disabled>
               </label>
             </div>
             <div class="large-4 columns">
-              <label>Postal Code <input type="text" name="postalCode" id="postalCode" placeholder="Postal Code">
+              <label>Postal Code <input type="text" name="postalCode" id="postalCode" placeholder="Postal Code" disabled>
               </label>
             </div>
             <div class="large-4 columns">
-              <label>Country <input type="password" name="country" id="country" placeholder="Country">
+              <label>Country <input type="text" name="country" id="country" placeholder="Country" disabled>
               </label>
             </div>
           </div>

@@ -34,7 +34,7 @@ $assets = $this->config->item('assets');
   			<li class="price">PHP <?php echo number_format($item['price'], 2, '.', '') ?></li>
   			<li class="description"><?php echo $item['synopsis'] ?></li>
   			<li class="bullet-item"><?php echo $item['productType'] ?></li>
-  			<li><?php echo $item['quantity'] ?></li>
+        <li class="bullet-item"><?php echo $item['quantity'] ?> in Stock</li>
 		</ul>
 	</div>
 	
@@ -349,40 +349,29 @@ $assets = $this->config->item('assets');
       <div class="large-12 columns">
         <table>
 		  <thead>
-		    <tr>
-			  <th width="100">Product ID</th>		    	
+		    <tr>   	
 		      <th width="200">Title</th>
 		      <th>Synopsis/Summary</th>
 		      <th width="75">Price</th>
 		      <th width="125">Type</th>
+          <th width="100">Quantity</th>    
 		      <th width="50">Delete</th>
 		    </tr>
 		  </thead>
 		  <tbody>
-		    <tr>
-		      <td>999</td>
-		      <td>Title</td>
-		      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-		      <td>$99.00</td>
-		      <td>Book</td>
-		      <td><input id="checkbox1" name="checkbox1" type="checkbox"></td>
-		    </tr>
-		    <tr>
-		      <td>999</td>
-		      <td>Title</td>
-		      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-		      <td>$99.00</td>
-		      <td>Book</td>
-		      <td><input id="checkbox2" name="checkbox2" type="checkbox"></td>
-		    </tr>
-		    <tr>
-		      <td>999</td>
-		      <td>Title</td>
-		      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-		      <td>$99.00</td>
-		      <td>Book</td>
-		      <td><input id="checkbox3" name="checkbox3" type="checkbox"></td>
-		    </tr>
+		    <tr>   
+          <?php foreach ($inventory as $item): ?>
+
+            <tr>
+              <td><?php echo $item['title'] ?></td>
+                <td>PHP <?php echo number_format($item['price'], 2, '.', '') ?></td>
+                <td><?php echo $item['synopsis'] ?></td>
+                <td><?php echo $item['productType'] ?></td>
+                  <td><?php echo $item['quantity'] ?></td>
+                  <td><input id="checkbox1" name="checkbox1" type="checkbox"></td>
+            </tr>
+  
+          <?php endforeach ?>
 		  </tbody>
 		</table>
       </div>
